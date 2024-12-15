@@ -1,7 +1,32 @@
 spring:
-  profiles:
-    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/zhaoyu1121/config.git
+          username: 2505801506@qq.com
+          password: zhaoyu2017
+          search-paths: /config/
+          default-label: master
+          clone-on-start: true
+    bus:
+      enabled: true
   application:
-    name: config-server
+    name: config
+  rabbitmq:
+    host: 192.168.1.100
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 3000
+logging:
+  level:
+    org.springframework.cloud.bus.endpoint: DEBUG  # 查看 Spring Cloud Bus 的日志
+    org.springframework.cloud.config: DEBUG  # 查看 Spring Cloud Config 的日志
+    org.springframework.boot.actuate: DEBUG  # 查看 Actuator 的日志
