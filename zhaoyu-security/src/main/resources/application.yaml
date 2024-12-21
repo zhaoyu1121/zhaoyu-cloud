@@ -2,12 +2,15 @@ spring:
   application:
     name: security
   config:
-    import: optional:configserver:http://localhost:3000/config/
+    import: "configserver:"
   cloud:
     bus:
       enabled: true
     config:
-      fail-fast: true
+      fail-fast: false
+      discovery:
+        enabled: true  # 启用服务发现来找到 Config Server
+        service-id: config
   rabbitmq:
     host: 192.168.1.100
     port: 5672
@@ -18,3 +21,7 @@ management:
     web:
       exposure:
         include: refresh, bus-refresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.4:5000/eureka/

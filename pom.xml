@@ -12,6 +12,7 @@
         <module>zhaoyu-config</module>
         <module>zhaoyu-security</module>
         <module>zhaoyu-api</module>
+        <module>zhaoyu-eureka</module>
     </modules>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -77,11 +78,6 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-        </dependency>
-        <!-- Spring Cloud Bus with RabbitMQ -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
 </project>

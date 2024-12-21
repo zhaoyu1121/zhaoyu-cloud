@@ -1,4 +1,8 @@
+server:
+  port: 3000
 spring:
+  application:
+    name: config
   cloud:
     config:
       server:
@@ -9,10 +13,10 @@ spring:
           search-paths: /config/
           default-label: master
           clone-on-start: true
+    discovery:
+      enabled: true
     bus:
       enabled: true
-  application:
-    name: config
   rabbitmq:
     host: 192.168.1.100
     port: 5672
@@ -23,10 +27,7 @@ management:
     web:
       exposure:
         include: "*"
-server:
-  port: 3000
-logging:
-  level:
-    org.springframework.cloud.bus.endpoint: DEBUG  # 查看 Spring Cloud Bus 的日志
-    org.springframework.cloud.config: DEBUG  # 查看 Spring Cloud Config 的日志
-    org.springframework.boot.actuate: DEBUG  # 查看 Actuator 的日志
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.4:5000/eureka/
