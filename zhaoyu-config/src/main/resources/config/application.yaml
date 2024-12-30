@@ -1,5 +1,5 @@
 server:
-  port: 3000
+  port: 8888
 spring:
   application:
     name: config
@@ -10,7 +10,9 @@ spring:
           uri: https://gitee.com/zhaoyu1121/config.git
           username: 2505801506@qq.com
           password: zhaoyu2017
-          search-paths: /config/
+          search-paths:
+            - config
+            - rabbitmq
           default-label: master
           clone-on-start: true
     discovery:
@@ -30,4 +32,7 @@ management:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.4:5000/eureka/
+      defaultZone: http://192.168.1.4:8761/eureka/
+logging:
+  level:
+    org.springframework.cloud: DEBUG

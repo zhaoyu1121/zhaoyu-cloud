@@ -1,15 +1,12 @@
 server:
-  port: 5000
-
+  port: 8761
 spring:
   application:
     name: eureka
 eureka:
   client:
-    register-with-eureka: false
     fetch-registry: false
-  server:
-    enable-self-preservation: false
+    register-with-eureka: false
 management:
   endpoints:
     web:
