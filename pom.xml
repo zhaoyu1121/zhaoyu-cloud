@@ -11,8 +11,8 @@
     <modules>
         <module>zhaoyu-config</module>
         <module>zhaoyu-security</module>
-        <module>zhaoyu-api</module>
         <module>zhaoyu-eureka</module>
+        <module>zhaoyu-base</module>
     </modules>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

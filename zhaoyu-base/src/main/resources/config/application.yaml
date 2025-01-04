@@ -1,6 +1,6 @@
 spring:
   application:
-    name: security
+    name: base
   config:
     import: "configserver:"
   cloud:
@@ -8,7 +8,7 @@ spring:
       enabled: true
     config:
       fail-fast: true
-      name: security, rabbitmq-common, eureka-common
+      name: base, rabbitmq-common, eureka-common
       discovery:
         enabled: true  # 启用服务发现来找到 Config Server
         service-id: config
