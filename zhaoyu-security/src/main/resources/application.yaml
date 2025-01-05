@@ -8,7 +8,7 @@ spring:
       enabled: true
     config:
       fail-fast: true
-      name: security, rabbitmq-common, eureka-common
+      name: security, rabbitmq-common, eureka-common, ribbon-common
       discovery:
         enabled: true  # 启用服务发现来找到 Config Server
         service-id: config
