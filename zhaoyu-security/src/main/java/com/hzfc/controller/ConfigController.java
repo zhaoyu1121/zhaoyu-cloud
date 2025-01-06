@@ -1,6 +1,6 @@
 package com.hzfc.controller;
 
-import com.hzfc.service.ConfigService;
+import com.hzfc.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-    private final ConfigService service;
+    private final UserService userService;
 
     @GetMapping("/message")
     public String getMessage(){
-        return service.getMessage();
+        return userService.getMessage();
     }
 }
