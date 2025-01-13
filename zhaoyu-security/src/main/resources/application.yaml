@@ -1,14 +1,10 @@
 spring:
   application:
-    name: security
+    name: security # 服务名称
   config:
-    import: "configserver:"
+    import: "configserver:" # 从配置中心获取配置
   cloud:
-    bus:
-      enabled: true
     config:
-      fail-fast: true
-      name: security, rabbitmq-common, eureka-common, ribbon-common, resilience4j-common
       discovery:
         enabled: true  # 启用服务发现来找到 Config Server
-        service-id: config
+        service-id: config # Config Server 的服务名

@@ -11,6 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class PathConfig implements WebMvcConfigurer {
+    /**
+     * 统一访问前缀
+     * @param configurer 配置器
+     */
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.addPathPrefix("/", c -> true);

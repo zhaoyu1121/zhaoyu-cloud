@@ -1,14 +1,14 @@
 server:
-  port: 8761
+  port: 8761 # 默认端口
 spring:
   application:
-    name: eureka
+    name: eureka # 服务名称
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: false # 不从注册中心拉取服务
+    register-with-eureka: false # 不向注册中心注册自己
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*" # 暴露所有端点

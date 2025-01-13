@@ -2,13 +2,9 @@ spring:
   application:
     name: base
   config:
-    import: "configserver:"
+    import: "configserver:" # 配置服务地址
   cloud:
-    bus:
-      enabled: true
     config:
-      fail-fast: true
-      name: base, rabbitmq-common, eureka-common
       discovery:
         enabled: true  # 启用服务发现来找到 Config Server
-        service-id: config
+        service-id: config # Config Server 的服务名

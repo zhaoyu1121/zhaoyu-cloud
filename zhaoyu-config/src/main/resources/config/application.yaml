@@ -1,35 +1,32 @@
 server:
-  port: 8888
+  port: 8888 # 配置服务端口
 spring:
   application:
-    name: config
+    name: config # 配置服务名称
   cloud:
     config:
       server:
         git:
-          uri: https://gitee.com/zhaoyu1121/config.git
-          username: 2505801506@qq.com
-          password: zhaoyu2017
-          default-label: master
-          clone-on-start: true
+          uri: https://gitee.com/zhaoyu1121/config.git # 配置git仓库地址
+          username: 2505801506@qq.com # 配置git仓库用户名
+          password: zhaoyu2017 # 配置git仓库密码
+          default-label: master # 配置git仓库默认分支
+          clone-on-start: true # 配置git仓库是否在启动时自动克隆
     discovery:
-      enabled: true
+      enabled: true # 配置服务是否注册到注册中心
     bus:
-      enabled: true
+      enabled: true # 配置服务是否开启消息总线
   rabbitmq:
-    host: 192.168.1.100
-    port: 5672
-    username: guest
-    password: guest
+    host: 192.168.1.100 # 配置rabbitmq地址
+    port: 5672 # 配置rabbitmq端口
+    username: guest # 配置rabbitmq用户名
+    password: guest # 配置rabbitmq密码
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*" # 配置服务端点暴露
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.4:8761/eureka/
-logging:
-  level:
-    org.springframework.cloud.config.server: DEBUG
+      defaultZone: http://192.168.1.4:8761/eureka/ # 配置注册中心地址

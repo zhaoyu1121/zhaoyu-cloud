@@ -1,42 +1,10 @@
 spring:
   application:
-    name: gateway
+    name: gateway # 服务名称
   config:
-    import: "configserver:"
+    import: "configserver:" # 配置服务地址
   cloud:
-    bus:
-      enabled: true
     config:
-      fail-fast: true
-      name: gateway, rabbitmq-common, eureka-common
       discovery:
         enabled: true  # 启用服务发现来找到 Config Server
-        service-id: config
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-
-      routes:
-        - id: base
-          uri: lb://BASE
-          predicates:
-            - Path=/base/**
-          filters:
-            - RemoveRequestHeader=Forwarded
-        - id: security
-          uri: lb://SECURITY
-          predicates:
-            - Path=/security/**
-          filters:
-            - RemoveRequestHeader=Forwarded
-            - RewritePath=/security/(?<remaining>.*), /${remaining}
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    reactor.netty: DEBUG
+        service-id: config # Config Server 的服务名
